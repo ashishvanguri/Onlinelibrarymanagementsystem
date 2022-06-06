@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS</title>
+</head>
+<style>.navbar {
+  overflow: hidden;
+  background-color: #333;
+  text-align:center;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: white;
+
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:Arial, sans serif;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  font-family:Arial, sans serif;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  font-size: 20px;
+  font-family:Arial, sans serif;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  font-family:Arial, sans serif;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+#form{
+text-align:center;
+}
+.dropdown:hover .dropdown-content {
+  display: block;</style>
+<body background="static/loginpage.png" style=" background-size: cover;">
+
+<h1 style="background:#3a3b39;color:#f1f1f1;font-family:Arial, sans serif;font-size:75px;text-align:center;">Student Home Page</h1>>
+<div class="navbar">
+<div class="dropdown" style="text-align:center;">
+    <button class="dropbtn">Students
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/viewallstudents">View All Students</a>
+      <a href="/addstudent">Add Student</a>
+      <a href="/deletestudent">Delete Student</a>
+
+    </div>
+</div>
+
+    <div class="dropdown">
+    <button class="dropbtn">Books
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="/adminviewallbooks">View All Books</a>
+      <a href="/adminaddbook">Add Book</a>
+      <a href="/admindeletebook">Delete Book</a>
+        <a href="/adminissuebook">Issue Book</a>
+        <a href="/adminbookreturn">Take Book Return</a>
+    </div>
+        </div>
+    <div class="dropdown">
+    <button class="dropbtn">Faculty
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="/adminviewfaculty">View All Faculty</a>
+      <a href="/adminaddfaculty">Add Faculty</a>
+      <a href="/admindeletefaculty">Delete Faculty</a>
+    </div>
+</div>
+<a href="/" style=" font-family:Arial, sans serif;margin-left:1100px;">Logout</a>
+</div>
+</div id = 'form'>
+<br>
+<div></div>
+<form action="{{url_for('deleted_student')}}" style="text-align:center;background:#3a3b39;color:#f1f1f1;height:35px;font-size:25px;" method="POST">
+  <label for="users">Choose a User:</label>
+  <select id="users" name="deletestud">
+      {% for e in message%}
+    <option value="{{e[1]}}">{{e}}</option>
+      {% endfor %}
+  </select>
+  <input type="submit">
+</form>
+</div>
+<div >
+
+</div>
+</body>
+</html>

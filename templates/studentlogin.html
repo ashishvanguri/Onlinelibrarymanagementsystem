@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS</title>
+</head>
+<style>
+    ul{
+    padding:0;
+    height:50px;
+    background:#3a3b39;
+    font-family:Arial, sans serif;
+    text-align:center;
+}
+
+li{
+    display:inline-block;
+}
+
+a{
+    display:block;
+    padding:10px;
+    color:#f1f1f1;
+    text-decoration:none;
+    font-size:30px;
+}
+a:hover{
+color:black;
+}
+
+</style>
+<body background="static/loginpage.png" style=" background-size: cover;">
+<ul>
+    <li><a href="/">Home</a></li>
+</ul>
+<h1 style="background:#3a3b39;color:#f1f1f1;font-family:Arial, sans serif;font-size:75px;text-align:center;">Student Login Page</h1>>
+<h2 style="background:#3a3b39;color:#f1f1f1;font-family:Arial;font-size:25px;text-align:center;" >{{data}}</h2>
+<div >
+<form   id = "form" method="POST" style="text-align:center;", action="{{url_for('student_page')}}">
+            <input style="height:25px;width:200px;"onfocus="this.placeholder = ''" placeholder="Username" name="uname" type="text" >
+    <input name="pwd" style="height:25px;width:200px;" type="text" onfocus="this.placeholder = ''" placeholder="Password" >
+            <input id="button" type="submit" , value='Login'/>
+        </form>
+</div>
+<ul>
+
+    <li><a href="/studentsignup">Sign up</a></li>
+</ul>
+</body>
+</html>

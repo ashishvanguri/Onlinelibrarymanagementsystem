@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS</title>
+</head>
+<style>
+    ul{
+    padding:0;
+    height:50px;
+    background:#3a3b39;
+    font-family:Arial, sans serif;
+    text-align:center;
+}
+
+li{
+    display:inline-block;
+}
+
+a{
+    display:block;
+    padding:10px;
+    color:#f1f1f1;
+    text-decoration:none;
+    font-size:30px;
+}
+a:hover{
+color:black;
+}
+
+</style>
+<body background="static/loginpage.png" style=" background-size: cover;">
+
+<h1 style="background:#3a3b39;color:#f1f1f1;font-family:Arial, sans serif;font-size:75px;text-align:center;">Faculty Panel</h1>>
+<ul>
+    <li><a href="/facultyhome">Home</a></li>
+    <li><a href="/lendedbooksfaculty">Books Lended</a></li>
+    <li><a href="/changepasswordfaculty">Change Password</a></li>
+    <li><a href="/viewprofilefaculty">View Profile</a></li>
+    <li><a href="/viewbooksfaculty">View Available Books</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+<h5>
+<table style="font-size:20px;margin-left:auto;margin-right:auto;background:	#ddcdb2;padding:10px;border:1px Black;">
+  <tr>
+    <td>Lender ID</td>
+    <td>Book Name</td>
+    <td>Book ID</td>
+  </tr>
+    {% for e in message%}
+    <tr>
+    <td>{{e[0]}}</td>
+     <td>{{e[1]}}</td>
+     <td>{{e[2]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</h5>
+<div >
+
+</div>
+</body>
+</html>
